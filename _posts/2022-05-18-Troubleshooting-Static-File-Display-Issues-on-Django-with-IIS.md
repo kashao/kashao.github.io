@@ -53,4 +53,5 @@ comments: false
 這篇網誌文章記錄了我在處理 Django 與 IIS 上靜態文件顯示問題時的困境，並最終通過閱讀 Django 的文件成功解決了問題。
 
 Reference:
+
 + [How to manage static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/4.0/howto/static-files/)

@@ -15,19 +15,20 @@ comments: false
 * RSS 訂閱 (django.contrib.syndication.views.Feed)
 * 連接到 MSSQL Server (mssql-django)
 
-Reference: 
-+ [Inserting Data to SQL Server from a Python Dataframe Quickly](https://stackoverflow.com/questions/63523711/inserting-data-to-sql-server-from-a-python-dataframe-quickly)
+Reference:
 
-+ [APScheduler in Django rest framework](https://www.mindbowser.com/apscheduler-in-django-rest-framework/)
+* [Inserting Data to SQL Server from a Python Dataframe Quickly](https://stackoverflow.com/questions/63523711/inserting-data-to-sql-server-from-a-python-dataframe-quickly)
 
-+ [Jobs Scheduling](https://django-extensions.readthedocs.io/en/latest/jobs_scheduling.html)
+* [APScheduler in Django rest framework](https://www.mindbowser.com/apscheduler-in-django-rest-framework/)
 
-+ [How to add an image to Django's Syndication RSS-feed](https://stackoverflow.com/questions/61544508/how-to-add-an-image-to-djangos-syndication-rss-feed)
+* [Jobs Scheduling](https://django-extensions.readthedocs.io/en/latest/jobs_scheduling.html)
 
-+ [The syndication feed framework](https://docs.djangoproject.com/en/4.0/ref/contrib/syndication/)
+* [How to add an image to Django's Syndication RSS-feed](https://stackoverflow.com/questions/61544508/how-to-add-an-image-to-djangos-syndication-rss-feed)
 
-+ [How to add multiple databases to the django application ?](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/multiple_databases.html)
+* [The syndication feed framework](https://docs.djangoproject.com/en/4.0/ref/contrib/syndication/)
 
-+ [GitHub - microsoft/mssql-django](https://github.com/microsoft/mssql-django)
+* [How to add multiple databases to the django application ?](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/multiple_databases.html)
 
-+ [Python Django + Microsoft SQL Server CRUD API Tutorial](https://www.youtube.com/watch?v=w8mTKlOeb2o)
+* [GitHub - microsoft/mssql-django](https://github.com/microsoft/mssql-django)
+
+* [Python Django + Microsoft SQL Server CRUD API Tutorial](https://www.youtube.com/watch?v=w8mTKlOeb2o)

@@ -58,5 +58,6 @@ toString()：使用預設的格式來顯示時間。
 
 詳細的格式可以參考 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
-Reference: 
-+ [Is there an easier way to display live time and date in HTML using bootstrap?](https://stackoverflow.com/questions/61280319/is-there-an-easier-way-to-display-live-time-and-date-in-html-using-bootstrap)
+Reference:
+
+* [Is there an easier way to display live time and date in HTML using bootstrap?](https://stackoverflow.com/questions/61280319/is-there-an-easier-way-to-display-live-time-and-date-in-html-using-bootstrap)

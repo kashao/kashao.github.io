@@ -39,13 +39,9 @@ def Submit(request):
 
 在上面的代碼中，我定義了一個名為 Submit 的視圖函式，用於處理 POST 請求。
 
-我使用 time 模組來獲取當前時間，並將其賦值給 current_time 變數，以便後續使用。
+我使用 time 模組來獲取當前時間，並將其賦值給 current_time 變數，以便後續使用。接著，我從 POST 請求中獲取檔案資訊，並檢查是否存在檔案以及檔案名稱是否符合預期。如果檔案符合預期，我會調用 handle_uploaded_file 函式來處理上傳的檔案並進行相應的操作。
 
-接著，我從 POST 請求中獲取檔案資訊，並檢查是否存在檔案以及檔案名稱是否符合預期。
-
-如果檔案符合預期，我會調用 handle_uploaded_file 函式來處理上傳的檔案並進行相應的操作。
-
-最後，我返回適當的響應。
+最後，返回適當的響應。
 
 HttpResponse("Failed") 這句就直接讓網頁顯示 Failed
 
@@ -61,9 +57,7 @@ def download(request):
     return response
 ```
 
-另外，我還定義了一個名為 download 的視圖函式，用於處理下載檔案的請求。
-
-在這個函式中，我打開了檔案並使用 FileResponse 來生成響應對象，並設置了相應的檔案類型和檔案名稱。
+另外，我還定義了一個名為 download 的視圖函式，用於處理下載檔案的請求。在這個函式中，打開檔案並使用 FileResponse 來生成響應對象，並設置了相應的檔案類型和檔案名稱。
 
 handle_uploaded_file Function
 
@@ -87,13 +81,12 @@ def handle_uploaded_file(file, filename, cluster_n, TWvalue):
 
 此外，我還定義了一個名為 handle_uploaded_file 的函式，用於處理上傳的檔案。
 
-在這個函式中，我檢查是否存在指定的目錄，如果不存在則創建它。
-
-然後，我打開目標檔案，將檔案分塊寫入目的地。接著，我調用 main 函式，並進行壓縮等操作。
+在這個函式中，我檢查是否存在指定的目錄，如果不存在則創建它。然後，我打開目標檔案，將檔案分塊寫入目的地。接著，我調用 main 函式，並進行壓縮等操作。
 
 最後，我返回 True。
 
 Result View
+
 ```python
 def result(request):
     #os.chdir('*****/upload/'+ current_time + '/')
@@ -107,11 +100,8 @@ def result(request):
     return response
 ```
 
-最後，我還定義了一個名為 result 的視圖函式，用於處理結果頁面的請求。
+最後，我還定義了一個名為 result 的視圖函式，用於處理結果頁面的請求。在這個函式中，我打開壓縮後的檔案，並生成相應的響應對象，同時設置了檔案類型和檔案名稱。
 
-在這個函式中，我打開壓縮後的檔案，並生成相應的響應對象，同時設置了檔案類型和檔案名稱。
+Reference:
 
-這些是我最近在一個之前的副專案上進行的一些實驗和研究。
-
-Reference: 
-+ My previous side-project
+* My previous side-project

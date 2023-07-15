@@ -81,9 +81,14 @@ manage.py runserver --insecure
 ---
 
 Reference:
+
 + [The staticfiles app](https://docs.djangoproject.com/en/4.0/ref/contrib/staticfiles/)
+
 + [Differences between STATICFILES_DIR, STATIC_ROOT and MEDIA_ROOT](https://stackoverflow.com/questions/24022558/differences-between-staticfiles-dir-static-root-and-media-root)
+
 + [Django 中STATIC_ROOT 与STATICFILES_DIRS的区别](https://www.qikqiak.com/post/django-staticroot-staticfilesdirs-function/)
+
 + [I don't really understand how STATICFILES_DIRS and STATIC_ROOT Django settings works](https://stackoverflow.com/questions/62348013/i-dont-really-understand-how-staticfiles-dirs-and-static-root-django-settings-w)
+
 + [Django學習教程之靜態檔案的呼叫詳解](https://codertw.com/程式語言/356962/)
-+ [Why does DEBUG=False setting make my django Static Files Access fail?](https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail)
+ [Why does DEBUG=False setting make my django Static Files Access fail?](https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail)
