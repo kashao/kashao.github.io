@@ -6,17 +6,19 @@ tags: [Azure, Bot, VM]
 comments: false
 ---
 
+# 我的 Azure 服務試用心得
+
 在這篇文章中，我想分享一下為什麼我開始接觸並試用 Azure 服務的原因，並且我盡可能地想要使用免費的服務。
 
-我想使用 Bot 服務，一些社交平台已經提供了一些可以直接新增的機器人（例如，我在 Discord 上可以免費新增機器人）。但是，對於 Teams 平台，我需要與 Microsoft 的服務進行綁定，雖然新增機器人不需要費用，但進行進階設定需要綁定 Azure 帳戶。
+我想使用 Bot 服務，一些社交平台已經提供了一些可以直接新增的機器人（例如，在 Discord 上可以免費新增機器人）。但是，對於 Teams 平台，我需要與 Microsoft 的服務進行綁定，雖然新增機器人不需要費用，但進行進階設定需要綁定 Azure 帳戶。
 
 我做了甚麼：
 
-1. Create Bot Service
+1. 建立 Bot 服務
 
     申請類似社交平台上機器人的空殼。
 
-2. Create Windows/Linux VM
+2. 建立 Windows/Linux VM
 
     運行我的機器人所需的伺服器。
 
@@ -34,7 +36,7 @@ comments: false
 
     令我驚訝的是，Linux 內建了 Python，但沒有預先安裝 pip（不過可以另外安裝）。另外，內建的 Python 也沒有內建的 venv（虛擬環境），但這些都可以透過額外安裝來解決。我也需要適應一些 Windows 上指令的差異。
 
-    ```cmd
+    ```shell
     source venv/bin/activate
     ```
 
@@ -52,7 +54,7 @@ comments: false
 
 最後，我要提醒大家，這些服務隨時間而改變。之前的 Heroku 服務規則也有變動，所以這篇文章紀錄的是我目前的經驗，未來免費資源的可用性可能會有所改變。
 
-Reference:
+參考資料：
 
-* [探索免費的 Azure 服務](https://azure.microsoft.com/zh-tw/pricing/free-services/)
-* [Chatgpt](https://openai.com/)
+- [探索免費的 Azure 服務](https://azure.microsoft.com/zh-tw/pricing/free-services/)
+- [ChatGPT](https://openai.com/)

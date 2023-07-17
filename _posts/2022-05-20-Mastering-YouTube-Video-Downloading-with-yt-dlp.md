@@ -6,6 +6,12 @@ tags: [Python, yt-dlp]
 comments: false
 ---
 
+我幫你整理了第三篇文章的排版，並將 "Note" 的部分改成了 "# 章節"：
+
+---
+
+# yt-dlp: 一個強大的 YouTube 影片下載套件
+
 這篇網誌文章介紹了 yt-dlp，一個用於從 YouTube 下載影片和音訊的強大套件。
 
 大約一兩年前，我還在使用 youtube-dl，但當時發現下載速度太慢，且容易出現錯誤。
@@ -18,16 +24,15 @@ comments: false
 pip install yt-dlp
 ```
 
-**Note:** 本篇文章僅提供簡單的指令，請參考 GitHub 上的完整說明。
+**本篇文章僅提供簡單的指令，請參考 GitHub 上的完整說明**
 
-**Note:** 在使用 yt-dlp 時，我將 ffmpeg、ffplay 和 ffprobe 的執行檔與 yt-dlp 放在同一個資料夾中。
+## 章節: 在使用 yt-dlp 時，我將 ffmpeg、ffplay 和 ffprobe 的執行檔與 yt-dlp 放在同一個資料夾中
 
 這些工具在合成視頻或音頻時需要使用，如果缺少這些工具，會出現錯誤，除非您已經設置了相應的環境變數。
 
 ---
 
-{: .box-note}
-**Note:** 簡單一行指令滿足我的需求
+## 簡單一行指令滿足我的需求
 
 我提供了一行簡單的指令，滿足了我對於下載 YouTube 影片所需的需求。
 
@@ -41,15 +46,14 @@ yt-dlp -f "bv*+ba" --cookies-from-browser edge --embed-thumbnail https://youtu.b
 
 ---
 
-{: .box-note}
-**Note:** 簡單解中的設定說明
+## 簡單解中的設定說明
 
 簡單解中使用了一些內容，以下是這些內容的說明：
 
-+ bv*+ba* : 下載最佳畫質和音頻。可以參考 -F 指令以了解該影片可選的不同格式。
-+ --cookies-from-browser ：抓取瀏覽器的 cookies。某些影片可能需要登錄才能觀看，這個設定可以解決該問題。您可以指定要使用的瀏覽器，請參考下面的指令。
-+ --embed-thumbnail：下載影片縮圖。
-+ -o：後面的內容指定下載的文件名稱。有很多選項可以根據您的喜好進行更改，請參考原文。
+- bv*+ba* : 下載最佳畫質和音頻。可以參考 -F 指令以了解該影片可選的不同格式。
+- --cookies-from-browser ：抓取瀏覽器的 cookies。某些影片可能需要登錄才能觀看，這個設定可以解決該問題。您可以指定要使用的瀏覽器，請參考下面的指令。
+- --embed-thumbnail：下載影片縮圖。
+- -o：後面的內容指定下載的文件名稱。有很多選項可以根據您的喜好進行更改，請參考原文。
 
 ```less
 #-F, --list-formats List available formats of each video.
@@ -68,4 +72,4 @@ Currently supported browsers are: brave, chrome, chromium, edge, firefox, opera,
 
 Reference:
 
-+ [yt-dlp/yt-dlp A youtube-dl fork with additional features and fixes - Github](https://github.com/yt-dlp/yt-dlp)
+- [yt-dlp/yt-dlp A youtube-dl fork with additional features and fixes - Github](https://github.com/yt-dlp/yt-dlp)

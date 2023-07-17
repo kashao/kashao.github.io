@@ -6,7 +6,7 @@ tags: [JavaScript]
 comments: false
 ---
 
-以下是一篇關於在網頁上取得使用者當前時間的 JavaScript 代碼：
+關於在網頁上取得使用者當前時間的 JavaScript 代碼。
 
 HTML:
 
@@ -53,11 +53,11 @@ JavaScript：
 
 這兩段代碼的差異在於時間的顯示方式：
 
-toLocaleString()：使用本地化的格式來顯示時間。
-toString()：使用預設的格式來顯示時間。
+- toLocaleString()：使用本地化的格式來顯示時間。
+- toString()：使用預設的格式來顯示時間。
 
 詳細的格式可以參考 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
-Reference:
+參考資料：
 
-* [Is there an easier way to display live time and date in HTML using bootstrap?](https://stackoverflow.com/questions/61280319/is-there-an-easier-way-to-display-live-time-and-date-in-html-using-bootstrap)
+- [Is there an easier way to display live time and date in HTML using bootstrap?](https://stackoverflow.com/questions/61280319/is-there-an-easier-way-to-display-live-time-and-date-in-html-using-bootstrap)

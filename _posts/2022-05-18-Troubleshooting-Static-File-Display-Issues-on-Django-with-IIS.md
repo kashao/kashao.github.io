@@ -6,52 +6,30 @@ tags: [Django, IIS]
 comments: false
 ---
 
-這篇網誌文章記錄了我在處理靜態文件問題時遇到的困境。
+# 處理 Django 與 IIS 上的靜態文件顯示問題
 
-靜態文件，如網頁的 CSS 和 JavaScript 檔案，對於美化網站至關重要。
+這篇網誌文章記錄了我在處理 Django 與 IIS 上靜態文件顯示問題時遇到的困境，以及我最終通過閱讀 Django 的文件成功解決問題的過程。
 
-然而，問題出在原本在本地運行時，顯示正常，但將 Django 部署到 IIS 上後...
+## 問題的出現
 
-出現了顯示設定的問題。
+在本地運行 Django 應用程式時，靜態文件（例如 CSS 和 JavaScript 檔案）正常顯示，沒有問題。但是，當我將 Django 部署到 IIS 上後，遇到了靜態文件顯示的問題。儘管我在網上搜索了很多方法，但試過的方法都無效。
 
-在網路上查找後，發現有人說無法找到靜態文件，但我試過了所有方法，都沒有用。
+## 嘗試不同的解決方法
 
-我使用的作業系統是 Windows 2018 Server，並且按照公司的說明使用了 HTTPS 認證上線。
+我在網上搜索了一些解決方法，主要在 Stack Overflow 上搜尋關鍵字 "IIS, Django, Static"，並嘗試了所有找到的方法。這些方法包括新增虛擬目錄、新增應用程式、調整資料夾權限等，但都沒有解決問題。雖然這些方法可能因為不同的時空背景而有所不同，但我嘗試過的方法都無法正確顯示靜態文件。
 
----
+## 查閱 Django 文件
 
-{: .box-note}
-**Note:** 一種方法試不了你有試第二次嗎？
+最後，我決定直接查閱 Django 的官方文件。我發現了一篇名為 [How to manage static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/4.0/howto/static-files/) 的文件，該文件提供了有關處理靜態文件的詳細指南。
 
-其實，我在網上找到了幾種方法，就在 Stack Overflow 上搜尋關鍵字
+我仔細閱讀了該文件並按照指南進行調整。其中涉及到調整 IIS 的前置作業和 WSGI 等相關設定。這些調整的步驟非常清晰，且有詳細的說明和示例。
 
-"IIS, Django, Static"，能找到的方法就那幾種。
+## 成功解決問題
 
-我試了所有方法，但都沒有用。
+通過閱讀 Django 的文件並按照指南進行調整，我成功地在 IIS 上取得了靜態文件。這讓我再次深刻體認到良好的文件對於解決問題的重要性。
 
-儘管可能因為不同的時空背景有所不同。
+這篇網誌文章記錄了我在處理 Django 與 IIS 上靜態文件顯示問題時的困境，以及最終通過閱讀 Django 的文件成功解決問題的過程。我希望這個經驗能對其他遇到相似問題的人有所幫助。
 
-我嘗試過新增虛擬目錄、應用程式，甚至試過新增資料夾權限，但都無法成功...
+參考資料：
 
-暫時使用 CDN 解決了問題，但我還是擔心這樣是否安全。如果公司封鎖了 CDN，那該怎麼辦呢？
-
----
-
-{: .box-note}
-**Note:** 問，問就是直接看 Django 的 doc
-
-結果問題不在於 Django 的設定，而是需要調整 IIS 的設定。
-
-反正只需要調整一下 IIS 的前置作業和 WSGI 等，就不需要進行其他操作了。
-
-[How to manage static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/4.0/howto/static-files/)
-
-對，就是這篇文件，我成功地在 IIS 上取得了靜態文件。
-
-再次深刻體認到**好的**文件真的很有用。
-
-這篇網誌文章記錄了我在處理 Django 與 IIS 上靜態文件顯示問題時的困境，並最終通過閱讀 Django 的文件成功解決了問題。
-
-Reference:
-
-+ [How to manage static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/4.0/howto/static-files/)
+- [How to manage static files (e.g. images, JavaScript, CSS)](https://docs.djangoproject.com/en/4.0/howto/static-files/)
