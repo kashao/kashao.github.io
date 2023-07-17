@@ -6,10 +6,6 @@ tags: [Python, yt-dlp]
 comments: false
 ---
 
-我幫你整理了第三篇文章的排版，並將 "Note" 的部分改成了 "# 章節"：
-
----
-
 # yt-dlp: 一個強大的 YouTube 影片下載套件
 
 這篇網誌文章介紹了 yt-dlp，一個用於從 YouTube 下載影片和音訊的強大套件。
