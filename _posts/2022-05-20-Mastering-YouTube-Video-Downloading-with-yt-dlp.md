@@ -22,7 +22,7 @@ pip install yt-dlp
 
 **本篇文章僅提供簡單的指令，請參考 GitHub 上的完整說明**
 
-## 章節: 在使用 yt-dlp 時，我將 ffmpeg、ffplay 和 ffprobe 的執行檔與 yt-dlp 放在同一個資料夾中
+## 在使用 yt-dlp 時，我將 ffmpeg、ffplay 和 ffprobe 的執行檔與 yt-dlp 放在同一個資料夾中
 
 這些工具在合成視頻或音頻時需要使用，如果缺少這些工具，會出現錯誤，除非您已經設置了相應的環境變數。
 
