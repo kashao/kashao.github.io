@@ -11,7 +11,7 @@ comments: false
 
 ## 掌握 Ag-Grid：關於 Ag-Grid 操作的進階技巧，我在工作中學到的幾件事：進階技巧
 
-### 1. Ag-Grid 添加按鈕
+### 1. Ag-Grid 按鈕添加
 
 #### 新增 Delete 和 Edit 按鈕到 Ag-Grid. Ag-Grid 添加刪除按鈕
 
@@ -25,7 +25,7 @@ this.columnDefs.push({
       cellRenderer: (params) => {
         const button = document.createElement('button');
         button.innerHTML = 'Del';
-        button.classList.add('btn', 'btn-danger', 'mr-2'); // Bootstrap
+        button.classList.add('btn', 'btn-danger', 'mr-2');
         button.addEventListener('click', () => {
           const shouldDelete = confirm('確定要刪除此列嗎？');
           if (shouldDelete) {
@@ -72,7 +72,7 @@ async DoDelRow(node: any): Promise<void> {
     await this.DoUpdComment('DelComment');
     this.ValueData = this.ValueData.filter((item: any) => item.ID !== ID);
     this.gridApi.setRowData(this.ValueData);
-    this.InsertComment.emit();
+    // this.InsertComment.emit();
   }
 ```
 
@@ -88,8 +88,8 @@ async DoDelRow(node: any): Promise<void> {
     this.comment = '';
     this.startTime = null;
     this.endTime = null;
-    this.onRefresh();
-    this.InsertComment.emit();
+    // this.onRefresh();
+    // this.InsertComment.emit();
   }
 ```
 
@@ -126,8 +126,8 @@ colDef.cellStyle = (params) => {
 #### c. Get current Datetime
 
 ```typescript
-const currentTime = new Date();
-this.refreshTime = currentTime.toLocaleTimeString();
+  const currentTime = new Date();
+  this.refreshTime = currentTime.toLocaleTimeString();
 ```
 
 ### 4. Column Definitions in Ag-Grid
@@ -145,7 +145,7 @@ getDynamicColumns(valueData: any[]): string[] {
   }
 ```
 
-#### 在資料來源動態生成該 Column 下的 unique 值
+#### 在資料來源動態生成該 Column 下的 Unique 值
 
 ```typescript
 getUniqueValues(valueData: any[], column): string[] {
