@@ -2,7 +2,7 @@
 layout: post
 title: Integrating a Modal Component in Angular with ngx-bootstrap
 subtitle: Setting Up the Modal Service Subscribing to Actions within the Modal
-tags: [TypeScript, Modal ]
+tags: [TypeScript, Modal]
 comments: false
 
 ---
