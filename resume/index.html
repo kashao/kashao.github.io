@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hsiao Lin｜工程師 Resume</title>
+  <meta name="description" content="Hsiao Lin（工程師）的個人履歷：技能、經歷、專案與聯絡方式。" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Basic Open Graph -->
+  <meta property="og:title" content="Hsiao Lin｜工程師 Resume" />
+  <meta property="og:description" content="技能、經歷、專案與聯絡方式。" />
+  <meta property="og:type" content="website" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hsiao Lin",
+    "jobTitle": "工程師",
+    "url": "https://kashao.github.io/resume-site/",
+    "sameAs": ["https://github.com/kashao","https://www.linkedin.com/in/hsiao-lin-lin-0738b6173/"],
+    "knowsAbout": ["Python","Web Full Stack","Angular","MSSQL","C#","TypeScript","Git"]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Top bar -->
+    <header class="topbar card">
+      <div class="brand" style="display: flex; align-items: center; gap: 0.75rem;">
+        <!-- 頭像在左 -->
+        <img src="https://avatars.githubusercontent.com/u/24772930" alt="Hsiao 頭像" class="avatar">
+        <div>
+          <div class="title">Hsiao <span class="muted">｜軟體工程師</span></div>
+          <div class="subtitle">Python · Web Full-Stack 學習者</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#about" data-route>關於我</a>
+        <a href="#skills" data-route>技能</a>
+        <a href="#experience" data-route>工作經歷</a>
+        <a href="#education" data-route>學歷</a>
+        <a href="#projects" data-route>專案</a>
+        <a href="#notes" data-route>學習筆記</a>
+        <a href="#contact" data-route>聯絡</a>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn" aria-label="Toggle theme">🌓 主題</button>
+      </div>
+    </header>
+
+    <!-- Main view: content gets injected here -->
+    <main id="app" class="view card" aria-live="polite">
+      <!-- app.js will inject sections/*.html here -->
+      <noscript>請開啟 JavaScript 以瀏覽此頁面內容。</noscript>
+    </main>
+
+    <footer class="foot">
+      <div>最後更新：<span id="lastUpdated">—</span></div>
+      <div class="muted">© Hsiao · 靜態部署於 GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

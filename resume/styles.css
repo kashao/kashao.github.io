@@ -1,0 +1,85 @@
+:root{
+  --bg:#0b0c10; --panel:#111216; --text:#e8e8ea; --muted:#a4a7af;
+  --border:#23252b; --chip:#1a1c22; --link:#a5d6ff; --shadow:0 10px 30px rgba(0,0,0,.35)
+}
+:root.light{
+  --bg:#fafafa; --panel:#fff; --text:#1b1d23; --muted:#5a5f6a;
+  --border:#e7e9ee; --chip:#f0f3f8; --link:#1b66d6; --shadow:0 10px 30px rgba(0,0,0,.06)
+}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,"PingFang TC","Microsoft JhengHei",Arial,sans-serif;
+  color:var(--text);
+  background-attachment: fixed;
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(141,193,255,.15), rgba(141,193,255,0) 40%),
+    radial-gradient(900px 600px at 100% 0%, rgba(255,170,200,.08), rgba(255,170,200,0) 35%),
+    var(--bg);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale
+}
+a{color:var(--link); text-decoration:none}
+.muted{color:var(--muted)}
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow);
+}
+.btn{border:1px solid var(--border); background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.04));
+  padding:8px 12px; border-radius:10px; color:var(--text); font-weight:600; cursor:pointer}
+.btn:hover{transform:translateY(-1px); transition:transform .15s ease}
+
+/* Layout */
+.layout{max-width:1080px; margin:0 auto; padding:20px}
+.topbar{display:grid; grid-template-columns:1fr auto auto; gap:16px; align-items:center; padding:16px 18px}
+.brand .title{font-size:26px; font-weight:800; letter-spacing:.2px}
+.brand .subtitle{font-size:14px; color:var(--muted)}
+.menu{display:flex; gap:10px; flex-wrap:wrap}
+.menu a{padding:6px 10px; border-radius:8px}
+.menu a.active{background:var(--chip); border:1px solid var(--border)}
+.actions{display:flex; gap:10px}
+.view{margin-top:16px; padding:22px}
+.foot{display:flex; justify-content:space-between; align-items:center; margin:14px 2px; color:var(--muted); font-size:14px}
+
+/* Content defaults inside sections */
+.view h1,.view h2{margin:.2rem 0 .6rem; letter-spacing:.2px}
+.view h1{font-size:24px}
+.view h2{font-size:18px}
+.view p{max-width:70ch; margin:.4rem 0}
+.view ul{margin:.3rem 0 .8rem 1.2rem}
+.view li{margin:.2rem 0}
+
+/* Reusable blocks */
+.badge{display:inline-block; border:1px solid var(--border); background:var(--chip);
+  padding:6px 10px; border-radius:999px; font-size:13px; margin:0 8px 8px 0}
+.kv{display:grid; grid-template-columns:minmax(160px,240px) 1fr; column-gap:16px; row-gap:10px;
+  padding:12px; border:1px solid var(--border); border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.02))}
+.kv .dt{font-weight:700; white-space:nowrap}
+.kv .dd{line-height:1.8}
+.edu{
+  display:grid; gap:14px
+}
+.edu-item{display:grid; grid-template-columns:1fr auto; gap:8px 16px; padding:10px 0; border-bottom:1px dashed var(--border)}
+.edu-item:last-child{border-bottom:0}
+.edu-item h3{margin:0 0 4px; font-size:16px}
+.edu-item .sub{margin-top:2px}
+
+/* Responsive */
+@media (max-width:800px){
+  .topbar{grid-template-columns:1fr; text-align:center}
+  .actions{justify-content:center}
+  .edu-item{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+}
+
+/* Print */
+@media print{
+  body{background:#fff; color:#000}
+  .card{box-shadow:none}
+  .menu,.actions{display:none !important}
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;       /* 圓形 */
+  object-fit: cover;        /* 填滿裁切 */
+  border: 2px solid var(--border);
+}
