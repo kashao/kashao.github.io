@@ -25,10 +25,22 @@
     "knowsAbout": ["Python","Web Full Stack","Angular","MSSQL","C#","TypeScript","Git"]
   }
   </script>
-  <!-- Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token": "a5c6fe6aa1f441c9ac541280d31c37a8"}'></script>
-  <!-- End Cloudflare Web Analytics -->
+
+  <script>
+    (function () {
+      const url = "https://shao.shaopara.workers.dev/track";
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          event: "page_view",
+          page: location.pathname,
+          ts: Date.now()
+        })
+      }).catch(() => {});
+    })();
+  </script>
 </head>
 
 <body>
