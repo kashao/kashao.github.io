@@ -17,7 +17,7 @@
       const html = await res.text();
       app.innerHTML = html;
       highlightActive();
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       app.innerHTML = `<p class="muted">載入失敗：${path}</p>`;
       console.error(err);
