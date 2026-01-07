@@ -1,0 +1,72 @@
+/* ===== Notes carousel: topic buttons ===== */
+.group-carousel-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.group-carousel-topics .group-carousel-topic {
+  /* keep your badge base look, but add contrast */
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+
+  /* make it feel clickable */
+  transform: translateY(0);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.group-carousel-topics .group-carousel-topic:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.group-carousel-topics .group-carousel-topic:focus-visible {
+  outline: 2px solid rgba(120, 180, 255, 0.85);
+  outline-offset: 2px;
+}
+
+/* Active topic (selected) */
+.group-carousel-topics .group-carousel-topic.is-active {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.40);
+  font-weight: 700;
+}
+
+/* Optional: make the active one stand out a bit more */
+.group-carousel-topics .group-carousel-topic.is-active:hover {
+  background: rgba(255, 255, 255, 0.20);
+}
+
+/* ===== Light theme tuning (your site uses .light on <html>) ===== */
+html.light .group-carousel-topics .group-carousel-topic {
+  border-color: rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+html.light .group-carousel-topics .group-carousel-topic:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.20);
+}
+
+html.light .group-carousel-topics .group-carousel-topic.is-active {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.26);
+}
+/* Option B: soft glow */
+.group-carousel-topics .group-carousel-topic.is-active {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+/* Fix: topic button text color in dark theme */
+html:not(.light) .group-carousel-topics .group-carousel-topic {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Light theme: keep text dark */
+html.light .group-carousel-topics .group-carousel-topic {
+  color: rgba(0, 0, 0, 0.82);
+}

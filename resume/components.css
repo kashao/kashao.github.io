@@ -1,0 +1,31 @@
+/* Reusable blocks */
+.btn{border:1px solid var(--border); background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.04));
+  padding:8px 12px; border-radius:10px; color:var(--text); font-weight:600; cursor:pointer}
+.btn:hover{transform:translateY(-1px); transition:transform .15s ease}
+
+.badge{display:inline-block; border:1px solid var(--border); background:var(--chip);
+  padding:6px 10px; border-radius:999px; font-size:13px; margin:0 8px 8px 0}
+.kv{display:grid; grid-template-columns:minmax(160px,240px) 1fr; column-gap:16px; row-gap:10px;
+  padding:12px; border:1px solid var(--border); border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.02))}
+.kv .dt{font-weight:700; white-space:nowrap}
+.kv .dd{line-height:1.8}
+.edu{
+  display:grid; gap:14px
+}
+.edu-item{display:grid; grid-template-columns:1fr auto; gap:8px 16px; padding:10px 0; border-bottom:1px dashed var(--border)}
+.edu-item:last-child{border-bottom:0}
+.edu-item h3{margin:0 0 4px; font-size:16px}
+.edu-item .sub{margin-top:2px}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;       /* 圓形 */
+  object-fit: cover;        /* 填滿裁切 */
+  border: 2px solid var(--border);
+}
+
+.link-group-head { display:flex; justify-content:space-between; align-items:center; }
+.link-group-actions { display:flex; gap:8px; }
+.link-group-list li.is-active a { font-weight:700; }
+.link-group-list li:not(.is-active) { opacity:.55; }
