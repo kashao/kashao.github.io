@@ -1,0 +1,24 @@
+:root{
+  --bg:#0b0c10; --panel:#111216; --text:#e8e8ea; --muted:#a4a7af;
+  --border:#23252b; --chip:#1a1c22; --link:#a5d6ff; --shadow:0 10px 30px rgba(0,0,0,.35)
+}
+:root.light{
+  --bg:#fafafa; --panel:#fff; --text:#1b1d23; --muted:#5a5f6a;
+  --border:#e7e9ee; --chip:#f0f3f8; --link:#1b66d6; --shadow:0 10px 30px rgba(0,0,0,.06)
+}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,"PingFang TC","Microsoft JhengHei",Arial,sans-serif;
+  color:var(--text);
+  background-attachment: fixed;
+  background:
+    radial-gradient(1200px 800px at 10% -10%, rgba(141,193,255,.15), rgba(141,193,255,0) 40%),
+    radial-gradient(900px 600px at 100% 0%, rgba(255,170,200,.08), rgba(255,170,200,0) 35%),
+    var(--bg);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale
+}
+a{color:var(--link); text-decoration:none}
+.muted{color:var(--muted)}
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow);
+}
