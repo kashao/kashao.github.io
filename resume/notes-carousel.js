@@ -27,41 +27,8 @@
   const AUTO_MS = 5000;
   const INIT_ATTR = "data-group-carousel-initialized";
 
-  function normalizeTitle(s) {
-    return (s || "").replace(/\s+/g, " ").trim();
-  }
-
-  function parseGroupsFromUl(ul) {
-    const nodes = Array.from(ul.childNodes);
-
-    /** @type {{ title: string, items: HTMLLIElement[] }[]} */
-    const groups = [];
-    let current = null;
-
-    for (const n of nodes) {
-      if (n.nodeType === Node.COMMENT_NODE) {
-        const title = normalizeTitle(n.nodeValue);
-        if (!title) continue;
-        current = { title, items: [] };
-        groups.push(current);
-        continue;
-      }
-
-      if (n.nodeType === Node.ELEMENT_NODE && n.tagName === "LI") {
-        if (!current) {
-          current = { title: "Links", items: [] };
-          groups.push(current);
-        }
-        current.items.push(n);
-      }
-    }
-
-    // Remove empty groups (just in case)
-    return groups.filter((g) => g.items && g.items.length > 0);
-  }
-
-  function buildCarousel(ul, groups) {
-    // English comments: Container replaces the original UL
+  function createCarouselDOM(groups) {
+    // English comments: Container
     const root = document.createElement("div");
     root.className = "group-carousel";
     root.setAttribute(INIT_ATTR, "1");
@@ -153,17 +120,26 @@
     root.appendChild(topics);
     root.appendChild(slidesWrap);
 
-    // Replace the original UL with carousel root
-    ul.parentNode.insertBefore(root, ul);
-    ul.remove();
+    return {
+      root,
+      titleEl: title,
+      prevBtn,
+      nextBtn,
+      pauseBtn,
+      topicsEl: topics,
+      topicButtons,
+      slidesWrap,
+      slides,
+    };
+  }
 
-    // English comments: State + behavior
+  function createCarouselState(groups, refs) {
     let idx = 0;
     let paused = false;
     let timer = null;
 
     function setActiveTopicButton() {
-      topicButtons.forEach((b, i) => {
+      refs.topicButtons.forEach((b, i) => {
         const isActive = i === idx;
         b.classList.toggle("is-active", isActive);
         b.setAttribute("aria-selected", String(isActive));
@@ -171,24 +147,24 @@
     }
 
     function render() {
-      slides.forEach((s, i) => {
+      refs.slides.forEach((s, i) => {
         s.hidden = i !== idx;
       });
 
-      title.textContent = `精選：${groups[idx].title}`;
+      refs.titleEl.textContent = `精選：${groups[idx].title}`;
       setActiveTopicButton();
 
       // Optional: scroll to top of carousel area on switch
-      root.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      refs.root.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
 
     function next() {
-      idx = (idx + 1) % slides.length;
+      idx = (idx + 1) % refs.slides.length;
       render();
     }
 
     function prev() {
-      idx = (idx - 1 + slides.length) % slides.length;
+      idx = (idx - 1 + refs.slides.length) % refs.slides.length;
       render();
     }
 
@@ -203,37 +179,52 @@
       start();
     }
 
+    function togglePause() {
+      paused = !paused;
+      refs.pauseBtn.setAttribute("aria-pressed", String(paused));
+      refs.pauseBtn.textContent = paused ? "Resume" : "Pause";
+    }
+
+    return {
+      render,
+      next,
+      prev,
+      start,
+      restart,
+      togglePause,
+      setIndex(value) {
+        idx = Math.max(0, Math.min(value, refs.slides.length - 1));
+      },
+    };
+  }
+
+  function bindCarouselControls(refs, state) {
     // English comments: Click topic to jump directly (does not change hash)
-    topics.addEventListener("click", (e) => {
+    refs.topicsEl.addEventListener("click", (e) => {
       const btn = e.target.closest("button.group-carousel-topic");
       if (!btn) return;
 
       const i = Number(btn.getAttribute("data-topic-index"));
       if (Number.isNaN(i)) return;
 
-      idx = Math.max(0, Math.min(i, slides.length - 1));
-      render();
-      restart();
+      state.setIndex(i);
+      state.render();
+      state.restart();
     });
 
-    prevBtn.addEventListener("click", () => {
-      prev();
-      restart();
+    refs.prevBtn.addEventListener("click", () => {
+      state.prev();
+      state.restart();
     });
 
-    nextBtn.addEventListener("click", () => {
-      next();
-      restart();
+    refs.nextBtn.addEventListener("click", () => {
+      state.next();
+      state.restart();
     });
 
-    pauseBtn.addEventListener("click", () => {
-      paused = !paused;
-      pauseBtn.setAttribute("aria-pressed", String(paused));
-      pauseBtn.textContent = paused ? "Resume" : "Pause";
+    refs.pauseBtn.addEventListener("click", () => {
+      state.togglePause();
     });
-
-    render();
-    start();
   }
 
   function initInRoot(root) {
@@ -244,10 +235,19 @@
       // Prevent double init
       if (ul.getAttribute(INIT_ATTR) === "1") return;
 
-      const groups = parseGroupsFromUl(ul);
+      const groups = window.notesCarouselParse?.parseGroupsFromUl?.(ul) || [];
       if (!groups.length) return;
 
-      buildCarousel(ul, groups);
+      const refs = createCarouselDOM(groups);
+
+      // Replace the original UL with carousel root
+      ul.parentNode.insertBefore(refs.root, ul);
+      ul.remove();
+
+      const state = createCarouselState(groups, refs);
+      bindCarouselControls(refs, state);
+      state.render();
+      state.start();
     });
   }
 
