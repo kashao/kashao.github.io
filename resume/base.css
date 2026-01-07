@@ -8,14 +8,22 @@
 }
 html,body{height:100%}
 body{
+  position:relative;
   margin:0; font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,"PingFang TC","Microsoft JhengHei",Arial,sans-serif;
   color:var(--text);
-  background-attachment: fixed;
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
   background:
     radial-gradient(1200px 800px at 10% -10%, rgba(141,193,255,.15), rgba(141,193,255,0) 40%),
     radial-gradient(900px 600px at 100% 0%, rgba(255,170,200,.08), rgba(255,170,200,0) 35%),
     var(--bg);
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale
 }
 a{color:var(--link); text-decoration:none}
 .muted{color:var(--muted)}
