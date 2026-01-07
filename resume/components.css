@@ -29,3 +29,58 @@
 .link-group-actions { display:flex; gap:8px; }
 .link-group-list li.is-active a { font-weight:700; }
 .link-group-list li:not(.is-active) { opacity:.55; }
+
+.highlight{
+  padding:0 .3em;
+  border-radius:6px;
+  background:linear-gradient(120deg, rgba(120,180,255,.18), rgba(120,180,255,0));
+  font-weight:700;
+}
+
+.strengths{
+  list-style:none;
+  padding:0;
+  margin:0 0 1rem;
+}
+
+.strengths li{
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.03));
+  margin:0 0 10px;
+}
+
+.experience{
+  display:grid;
+  gap:16px;
+}
+
+.experience-card{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.04));
+}
+
+.experience-head{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:8px 16px;
+  align-items:baseline;
+}
+
+.experience-role{
+  margin:0;
+}
+
+.experience-meta{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.experience-list{
+  margin:.5rem 0 0 1.2rem;
+}
