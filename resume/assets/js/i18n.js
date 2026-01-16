@@ -111,9 +111,18 @@
     }
   }
 
+  function detectLanguage() {
+    const languages = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ''];
+    const normalized = languages.map((lang) => lang.toLowerCase());
+    const prefersEnglish = normalized.some((lang) => lang.startsWith('en'));
+    return prefersEnglish ? 'en' : 'zh';
+  }
+
   function initI18n() {
     const stored = localStorage.getItem(LANG_KEY);
-    const initial = stored || 'zh';
+    const initial = stored || detectLanguage();
     const toggle = document.getElementById('langToggle');
     if (toggle) {
       toggle.addEventListener('click', () => {
