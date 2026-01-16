@@ -40,38 +40,40 @@
         <!-- 頭像在左 -->
         <img src="https://avatars.githubusercontent.com/u/24772930" alt="Hsiao 頭像" class="avatar">
         <div>
-          <div class="title">Hsiao <span class="muted">｜軟體工程師</span></div>
-          <div class="subtitle">Python · Web Full-Stack 學習者</div>
+          <div class="title">Hsiao <span class="muted" data-i18n="title.role">｜軟體工程師</span></div>
+          <div class="subtitle" data-i18n="title.subtitle">Python · Web Full-Stack 學習者</div>
         </div>
       </div>
       <nav class="menu">
-        <a href="#about" data-route>關於我</a>
-        <a href="#skills" data-route>技能</a>
-        <a href="#experience" data-route>工作經歷</a>
-        <a href="#education" data-route>學歷</a>
-        <a href="#projects" data-route>個人專案</a>
-        <a href="#notes" data-route>學習筆記</a>
-        <a href="#contact" data-route>聯絡</a>
+        <a href="#about" data-route data-i18n="nav.about">關於我</a>
+        <a href="#skills" data-route data-i18n="nav.skills">技能</a>
+        <a href="#experience" data-route data-i18n="nav.experience">工作經歷</a>
+        <a href="#education" data-route data-i18n="nav.education">學歷</a>
+        <a href="#projects" data-route data-i18n="nav.projects">個人專案</a>
+        <a href="#notes" data-route data-i18n="nav.notes">學習筆記</a>
+        <a href="#contact" data-route data-i18n="nav.contact">聯絡</a>
       </nav>
       <div class="actions">
-        <button id="themeToggle" class="btn" aria-label="Toggle theme">🌓 主題</button>
+        <button id="langToggle" class="btn" aria-label="Switch language">EN</button>
+        <button id="themeToggle" class="btn" aria-label="Toggle theme" data-i18n="actions.theme">🌓 主題</button>
       </div>
     </header>
 
     <!-- Main view: content gets injected here -->
     <main id="app" class="view card" aria-live="polite">
       <!-- app.js will inject sections/*.html here -->
-      <noscript>請開啟 JavaScript 以瀏覽此頁面內容。</noscript>
+      <noscript data-i18n="noscript">請開啟 JavaScript 以瀏覽此頁面內容。</noscript>
     </main>
 
     <footer class="foot">
-      <div>最後更新：<span id="lastUpdated">—</span></div>
-      <div class="muted">© Hsiao · 靜態部署於 GitHub Pages</div>
+      <div><span data-i18n="footer.updated">最後更新：</span><span id="lastUpdated">—</span></div>
+      <div class="muted" data-i18n="footer.copyright">© Hsiao · 靜態部署於 GitHub Pages</div>
     </footer>
   </div>
 
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/last-updated.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/router.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/parse.js"></script>
