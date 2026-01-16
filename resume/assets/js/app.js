@@ -9,6 +9,9 @@
     if (typeof window.initLastUpdated === 'function') {
       window.initLastUpdated(lastUpdated);
     }
+    if (typeof window.initI18n === 'function') {
+      window.initI18n();
+    }
     if (typeof window.initRouter === 'function') {
       window.initRouter(app);
     }

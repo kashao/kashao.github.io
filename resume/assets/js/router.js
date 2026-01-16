@@ -1,14 +1,21 @@
 // Tiny hash router for static GitHub Pages
 (function () {
   const routes = {
-    '#about': 'sections/about.html',
-    '#skills': 'sections/skills.html',
-    '#experience': 'sections/experience.html',
-    '#projects': 'sections/projects.html',
-    '#education': 'sections/education.html',
-    '#contact': 'sections/contact.html',
-    '#notes': 'sections/notes.html'
+    '#about': 'about',
+    '#skills': 'skills',
+    '#experience': 'experience',
+    '#projects': 'projects',
+    '#education': 'education',
+    '#contact': 'contact',
+    '#notes': 'notes'
   };
+
+  function getSectionPath(hash) {
+    const key = routes[hash] || routes['#about'];
+    const lang = typeof window.getLanguage === 'function' ? window.getLanguage() : 'zh';
+    const base = lang === 'en' ? 'sections/en' : 'sections';
+    return `${base}/${key}.html`;
+  }
 
   async function load(app, path) {
     try {
@@ -32,7 +39,7 @@
 
   function router(app) {
     const hash = location.hash || '#about';
-    const path = routes[hash] || routes['#about'];
+    const path = getSectionPath(hash);
     load(app, path);
   }
 
@@ -40,6 +47,7 @@
     if (!app) return;
     window.addEventListener('hashchange', () => router(app));
     router(app);
+    window.reloadRoute = () => router(app);
   }
 
   window.initRouter = initRouter;
