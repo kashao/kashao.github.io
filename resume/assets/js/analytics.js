@@ -1,5 +1,5 @@
 (function () {
-  const url = "https://shao.shaopara.workers.dev/track";
+  const url = "https://shao.pikashao.workers.dev/track";
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
